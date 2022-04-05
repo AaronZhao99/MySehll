@@ -1,0 +1,20 @@
+myshell用户手册
+1. 内部指令的使用说明
+    1.1  cd <directory> ——把当前默认目录改变为<directory>。如果没有<directory>参数，则显示当前目录。如该目录不存在，会出现合适的错误信息。这个命令也可以改变PWD 环境变量。
+    1.2  clr ——清屏。
+    1.3  dir <directory> ——列出目录<directory>的内容。
+    1.4  environ ——列出所有的环境变量。
+    1.5  echo <comment> ——在屏幕上显示<comment>并换行（多个空格和制表符可能被缩减为一个空格）。
+    1.6  help ——显示用户手册，并且使用more 命令过滤。
+    1.7  quit ——退出shell。
+2. 环境变量的说明
+    2.1 SHELL=/home/aaronzhao/workspace/myCS/OS/SJTU/projects/project1/temp/myshell
+    2.2 PWD=/home/aaronzhao/workspace/myCS/OS/SJTU/projects/project1/temp
+3. 输入输出重定向的说明
+    I/O 重定向，stdin 和stdout，或者其中之一，例如命令行为：
+    programname arg1 arg2 < inputfile > outputfile
+    使用arg1 和arg2 执行程序programname，输入文件流被替换为inputfile，输出文件流被替换为outputfile。
+    stdout 重定向支持以下内部命令：dir、environ、echo、help。
+    使用输出重定向时，如果重定向字符是>，则创建输出文件，如果存在则覆盖之；如果重定向字符为>>，也会创建输出文件，如果存在则添加到文件尾。
+4. 后台执行的说明
+    在Linux命令或者脚本后面增加&符号，从而使命令或脚本在后台执行
